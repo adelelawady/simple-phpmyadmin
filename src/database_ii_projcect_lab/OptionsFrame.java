@@ -162,8 +162,15 @@ public class OptionsFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
+        try {
+            // TODO add your handling code here:
+            InsertFrame SS =new InsertFrame(this.getTitle(),this.jList1.getSelectedValue());
+            SS.show();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(OptionsFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(OptionsFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
