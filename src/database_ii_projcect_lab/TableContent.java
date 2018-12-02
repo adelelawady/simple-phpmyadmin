@@ -68,7 +68,7 @@ String _DBName;
         Class.forName("com.mysql.jdbc.Driver");
 
         con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:8889/dbproject?zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8", "root", "root");
+                MainFrame.ConnectionInfo,  MainFrame.User, MainFrame.password);
 
         stmt = con.createStatement();
 
@@ -140,7 +140,7 @@ String _DBName;
                     jTextField1.setText(Sql);
                     try {
                         Connection conN = DriverManager.getConnection(
-                                "jdbc:mysql://localhost:8889/dbproject?zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8", "root", "root");
+                                MainFrame.ConnectionInfo,  MainFrame.User, MainFrame.password);
 
                         stmt = conN.createStatement();
                        int UResult =(stmt.executeUpdate(Sql));
@@ -303,7 +303,7 @@ String _DBName;
                      jTextField1.setText(Sql);
                     try {
                         Connection conN = DriverManager.getConnection(
-                                "jdbc:mysql://localhost:8889/dbproject?zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8", "root", "root");
+                                 MainFrame.ConnectionInfo,  MainFrame.User, MainFrame.password);
 
                         stmt = conN.createStatement();
                        int UResult =(stmt.executeUpdate(Sql));

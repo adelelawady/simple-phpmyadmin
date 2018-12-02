@@ -45,7 +45,7 @@ public class OptionsFrame extends javax.swing.JFrame {
                 Class.forName("com.mysql.jdbc.Driver");
 
                 Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:8889/dbproject", "root", "root");
+                         MainFrame.ConnectionInfo, "root", "root");
 
                 Statement stmt = con.createStatement();
 

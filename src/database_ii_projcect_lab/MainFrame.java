@@ -37,6 +37,12 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class MainFrame extends javax.swing.JFrame {
 
+    public static String Host = "localhost";
+    public static String post = "8889";
+    public static String User = "root";
+    public static String password = "root";
+    public static String ConnectionInfo = "jdbc:mysql://" + Host + ":" + post + "/dbproject?zeroDateTimeBehavior=convertToNull&autoReconnect=true&characterEncoding=UTF-8&characterSetResults=UTF-8";
+
     /**
      * Creates new form MainFrame
      */
@@ -64,17 +70,15 @@ public class MainFrame extends javax.swing.JFrame {
 
         private JPanel buttons = new JPanel(new GridLayout(10, 3));
 
-        
-
         public TestPane() {
-            
+
             setLayout(new BorderLayout());
-             buttons.add(new JLabel("All DataBases"));
+            buttons.add(new JLabel("All DataBases"));
             try {
                 Class.forName("com.mysql.jdbc.Driver");
 
                 Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:8889/dbproject", "root", "root");
+                        ConnectionInfo, User, password);
 
                 Statement stmt = con.createStatement();
 
